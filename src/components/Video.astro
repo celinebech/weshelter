@@ -1,5 +1,8 @@
 <video src="../video/herovideo.mp4" autoplay loop></video>
-
+<div class="overlay-text">
+  <h2>Et lille bidrag</h2>
+  <h1>en Stor forskel</h1>
+</div>
 <style>
   video {
     max-width: 100%;
@@ -7,5 +10,43 @@
     top: 0%;
     left: 0%;
     z-index: -1;
+  }
+  .overlay-text {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    color: white;
+    text-align: left;
+    max-width: 90%;
+    box-sizing: border-box;
+  }
+
+  .overlay-text h2 {
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  .overlay-text h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 50px;
+  }
+
+  @media (max-width: 768px) {
+    .overlay-text {
+      bottom: 5%;
+      left: 5%;
+      max-width: 80%;
+    }
+
+    .overlay-text h2 {
+      font-size: 1.2rem;
+    }
+
+    .overlay-text h1 {
+      font-size: 1.8rem;
+    }
   }
 </style>
