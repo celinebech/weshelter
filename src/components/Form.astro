@@ -2,6 +2,8 @@
 export let action = "/submit-donation";
 ---
 
+<p class="hjemløs">Hjemløse i Danmark</p>
+<hr />
 <section class="donation-container">
   <div class="text-section">
     <h1>Hjemløse har brug for ly.<br />Vi har brug for dig.</h1>
@@ -12,7 +14,6 @@ export let action = "/submit-donation";
       begyndelse.
     </p>
   </div>
-
   <div class="form-section">
     <form action={action} method="POST" class="donation-form">
       <div class="donation-options">
@@ -20,13 +21,15 @@ export let action = "/submit-donation";
         <button type="button">Enkelt donation</button>
       </div>
 
+      <h3 class="section-title">Beløb</h3>
       <div class="amount-selection">
-        <button type="button">60 DKK</button>
+        <button type="button" class="selected">60 DKK</button>
         <button type="button">120 DKK</button>
         <button type="button">200 DKK</button>
-        <input type="text" placeholder="Andet beløb (DKK)" />
+        <input type="text" placeholder="Andet beløb (DKK)..." />
       </div>
 
+      <h3 class="section-title">Vælg betalingsmetode</h3>
       <div class="payment-methods">
         <button type="button">MobilePay</button>
         <button type="button">Betalingsservice</button>
@@ -55,50 +58,191 @@ export let action = "/submit-donation";
 
 <style>
   .donation-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     align-items: center;
-    flex-wrap: wrap;
     max-width: 1200px;
     margin: auto;
+    padding: 40px;
   }
 
   .text-section {
-    flex: 1;
-    max-width: 50%;
     padding: 20px;
+    line-height: 40px;
+  }
+
+  h1 {
+    font-size: 30px;
+    line-height: 45px;
   }
 
   .form-section {
-    flex: 1;
-    max-width: 50%;
+    width: 100%;
     background: white;
-    padding: 20px;
+    padding: 30px;
     border: 2px solid #2a5bd7;
     border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
 
-  .donation-form {
+  .donation-options {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    justify-content: space-between;
+    background: #f2f2f2;
+    padding: 5px;
+    border-radius: 8px;
   }
 
-  .donation-options,
+  .donation-options button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .donation-options .active {
+    background: #2a5bd7;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .section-title {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
   .amount-selection,
   .payment-methods,
-  .input-group,
-  .checkbox-group {
+  .input-group {
     display: flex;
     gap: 10px;
+    margin-top: 10px;
+  }
+
+  .amount-selection button,
+  .payment-methods button {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .amount-selection .selected,
+  .amount-selection button:hover,
+  .payment-methods button:hover {
+    background: #2a5bd7;
+    color: white;
+  }
+
+  .amount-selection input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .input-group input,
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"] {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+  }
+
+  .checkbox-group {
+    text-align: left;
+    margin-top: 15px;
   }
 
   .donate-button {
     background-color: #2a5bd7;
     color: white;
-    padding: 10px;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  hr {
+    width: 60px;
+    background-color: #2a5bd7;
+    height: 2px;
+    margin-left: 50px;
+  }
+  .hjemløs {
+    padding-left: 50px;
+  }
+
+  @media (max-width: 768px) {
+    .donation-container {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .text-section,
+    .form-section {
+      max-width: 100%;
+      text-align: left;
+    }
+
+    .text-section,
+    .form-section {
+      max-width: 100%; /* Fylder hele bredden */
+      text-align: left;
+      line-height: 40px;
+    }
+
+    .form-section {
+      width: 90%;
+      padding: 20px;
+    }
+
+    .amount-selection,
+    .payment-methods,
+    .input-group {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .amount-selection button,
+    .payment-methods button {
+      width: 48%;
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .input-group input,
+    input[type="email"],
+    input[type="tel"],
+    input[type="text"] {
+      width: calc(100% - 16px);
+      padding: 10px;
+      font-size: 14px;
+    }
+
+    .donate-button {
+      padding: 10px;
+      font-size: 16px;
+    }
   }
 </style>
