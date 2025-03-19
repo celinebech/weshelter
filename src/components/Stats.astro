@@ -1,20 +1,87 @@
-<section>
-  <article class="stats">
-    <div class="text">
-      <h2>Tal der taler for sig selv</h2>
-      <p>
-        Vi har tal, der presser os til at yde vores bedste og sørge for, at vi
-        slår vores egne rekorder. Vi er glade for at vokse og hjælpe mere dag
-        for dag.
-      </p>
+<article class="stats">
+  <div class="text">
+    <h2>Tal der taler for sig selv</h2>
+    <p>
+      Hos WeShelter arbejder vi for at give hjemløse et trygt sted at sove, et
+      varmt måltid og den støtte, de har brug for til at komme videre i livet.
+      Ingen fortjener at stå alene – din donation kan give håb, varme og en ny
+      begyndelse.
+    </p>
+  </div>
+
+  <div class="tal-container">
+    <div class="tal">
+      <h3>1.000K+</h3>
+      <p>Medlemmer verden over</p>
     </div>
-  </article>
-  <article class="quickdonate"></article>
-</section>
+    <div class="tal">
+      <h3>$300M+</h3>
+      <p>Penge indsamlet</p>
+    </div>
+    <div class="tal">
+      <h3>950.000+</h3>
+      <p>Børn hjulpet</p>
+    </div>
+    <div class="tal">
+      <h3>50.000T</h3>
+      <p>Mad givet</p>
+    </div>
+  </div>
+</article>
 
 <style>
-  section {
+  .stats {
+    margin: auto;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+  }
+
+  .text {
+    max-width: 500px;
+    padding: 10px;
+  }
+
+  .text h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #111;
+  }
+
+  .text p {
+    font-size: 16px;
+    color: #666;
+    margin-top: 10px;
+  }
+
+  .tal-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    flex: 1;
+    padding: 5px;
+  }
+
+  .tal {
+    border-bottom: 1px solid #ff6600;
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .tal h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+  }
+
+  .tal p {
+    font-size: 14px;
+    color: #333;
+  }
+
+  .tal img {
+    margin-top: 5px;
+    width: 50px;
   }
 </style>
