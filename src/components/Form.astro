@@ -1,0 +1,104 @@
+---
+export let action = "/submit-donation";
+---
+
+<section class="donation-container">
+  <div class="text-section">
+    <h1>Hjemløse har brug for ly.<br />Vi har brug for dig.</h1>
+    <p>
+      Hos WeShelter arbejder vi for at give hjemløse et trygt sted at sove, et
+      varmt måltid og den støtte, de har brug for til at komme videre i livet.
+      Ingen fortjener at stå alene – din donation kan give håb, varme og en ny
+      begyndelse.
+    </p>
+  </div>
+
+  <div class="form-section">
+    <form action={action} method="POST" class="donation-form">
+      <div class="donation-options">
+        <button type="button" class="active">Støt månedligt</button>
+        <button type="button">Enkelt donation</button>
+      </div>
+
+      <div class="amount-selection">
+        <button type="button">60 DKK</button>
+        <button type="button">120 DKK</button>
+        <button type="button">200 DKK</button>
+        <input type="text" placeholder="Andet beløb (DKK)" />
+      </div>
+
+      <div class="payment-methods">
+        <button type="button">MobilePay</button>
+        <button type="button">Betalingsservice</button>
+        <button type="button">Betalingskort</button>
+      </div>
+
+      <div class="input-group">
+        <input type="text" placeholder="Fornavn" required />
+        <input type="text" placeholder="Efternavn" required />
+      </div>
+
+      <input type="email" placeholder="Email" required />
+      <input type="tel" placeholder="Telefon" required />
+      <input type="text" placeholder="Adresse" required />
+
+      <div class="checkbox-group">
+        <label><input type="checkbox" /> Ja tak, jeg ønsker skattefradrag</label
+        >
+        <label><input type="checkbox" required /> Accepter betingelser</label>
+      </div>
+
+      <button type="submit" class="donate-button">STØT</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .donation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .text-section {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+  }
+
+  .form-section {
+    flex: 1;
+    max-width: 50%;
+    background: white;
+    padding: 20px;
+    border: 2px solid #2a5bd7;
+    border-radius: 10px;
+  }
+
+  .donation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .donation-options,
+  .amount-selection,
+  .payment-methods,
+  .input-group,
+  .checkbox-group {
+    display: flex;
+    gap: 10px;
+  }
+
+  .donate-button {
+    background-color: #2a5bd7;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
