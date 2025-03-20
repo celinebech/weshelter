@@ -14,19 +14,46 @@ import Historie from "../components/Historie.astro";
   <Header />
   <Video />
   <main>
-    <img src="/img/herobillede.png" alt="" />
+    <img class="hero" src="/img/herobillede.png" alt="" />
   </main>
   <Form />
   <Stats />
-  <Cards />
+  <section class="cards">
+    <Cards
+      billede="sms.png"
+      beskrivelse="Send en SMS til 2200 med teksten STØT (koster 100 kr.)"
+      altText="speechbubble ikon"
+    />
+    <Cards
+      billede="mobilepay.png"
+      beskrivelse="Send et valgrit beløb på Mobilepay til 20202020 eller"
+      link=" klik her"
+      altText="telefon ikon"
+    />
+    <Cards
+      billede="netbank.png"
+      beskrivelse="Overfør et bidrag via Netbank til: Reg: 2222 Konto: 292 292929"
+      altText="telefon ikon"
+    />
+  </section>
   <Money />
   <Historie />
   <Footer />
 </Layout>
 
 <style>
-  img {
+  .hero {
     max-width: 100%;
     margin-top: 0;
+  }
+
+  .cards {
+    display: flex;
+    gap: 20px;
+    grid-template: subgrid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    padding: 5px;
+    margin: 0 auto;
   }
 </style>
