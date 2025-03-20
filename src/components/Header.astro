@@ -1,12 +1,26 @@
 <header>
   <nav>
-    <a class="weshelter" href="">WeShelter</a>
-    <ul>
-      <li><a href="">Få hjælp</a></li>
-      <li><a href="">Bliv frivillig</a></li>
-      <li><a href="">Om</a></li>
-      <li><a class="støt-knap">STØT</a></li>
-    </ul>
+    <a class="weshelter" href="/">WeShelter</a>
+    <div>
+      <ul class="fullscren">
+        <li><a href="/help">Få hjælp</a></li>
+        <li><a href="/volunteer">Bliv frivillig</a></li>
+        <li><a href="/about">Om</a></li>
+        <li><a class="støt-knap" href="/support">STØT</a></li>
+      </ul>
+    </div>
+    <!-- Burger Menu -->
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox" />
+    <label for="menu-toggle" class="burger-menu">&#9776;</label>
+
+    <div class="fullscreen-menu">
+      <ul>
+        <li><a href="/help">Få hjælp</a></li>
+        <li><a href="/volunteer">Bliv frivillig</a></li>
+        <li><a href="/about">Om</a></li>
+        <li><a class="støt-knap" href="/support">STØT</a></li>
+      </ul>
+    </div>
   </nav>
 </header>
 
@@ -42,7 +56,7 @@
     /* position: relative;
     display: flex;
     right: 800px; */
-    font-size: 40px;
+    font-size: 4vw;
     font-weight: 700;
     padding-left: 30px;
   }
@@ -62,9 +76,85 @@
     background-color: #3d3d3a;
     color: white;
   }
+
+  /* Burger menu styles */
+  .menu-checkbox {
+    display: none;
+  }
+  .burger-menu {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: white;
+    z-index: 1001;
+    transition: color 0.3s ease-in-out;
+  }
+
+  /* Når menuen er åben, bliver burger-menuen sort */
+  .menu-checkbox:checked + .burger-menu {
+    color: black;
+  }
+
+  .fullscreen-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  .menu-checkbox:checked + .burger-menu + .fullscreen-menu {
+    transform: translateY(0);
+  }
+
+  /* Viser kun burger-menuens ul, ikke headerens */
+  .fullscreen-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    display: block;
+  }
+
+  .fullscreen-menu ul li {
+    margin: 20px 0;
+  }
+
+  .fullscreen-menu ul li a {
+    font-size: 24px;
+    text-decoration: none;
+    color: black;
+  }
+
+  .støt-knap {
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: #f2952d;
+    color: white;
+    text-decoration: none;
+  }
+  .støt-knap:hover {
+    background-color: #3d3d3a;
+  }
+
   @media (max-width: 768px) {
+    .burger-menu {
+      display: block;
+    }
+    .fullscren {
+      display: none;
+    }
     .weshelter {
-      font-size: 20px;
+      margin-top: 30px;
     }
   }
 </style>
