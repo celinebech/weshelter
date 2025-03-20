@@ -1,6 +1,6 @@
 <section class="historie">
   <div class="billede">
-    <img src="/public/img/Linda.png" alt="" />
+    <img src="/img/Linda.png" alt="" />
     <p>Fonden Missionen blandt Hjemløse</p>
   </div>
   <div class="text">
@@ -40,5 +40,17 @@
   img {
     width: 600px;
     padding-left: 40px;
+  }
+  @media (max-width: 768px) {
+    .historie {
+      grid-template-columns: 1fr;
+    }
+    .text {
+      font-size: 16px;
+    }
+    img {
+      width: 400px;
+      align-items: center;
+    }
   }
 </style>
