@@ -1,0 +1,56 @@
+<section class="historie">
+  <div class="billede">
+    <img src="/img/Linda.png" alt="" />
+    <p>Fonden Missionen blandt Hjemløse</p>
+  </div>
+  <div class="text">
+    <h2>Fra gaden til en ny start</h2>
+    <h3>- Linda’s historie</h3>
+    <p>
+      For et år siden stod Linda uden tag over hovedet, fanget i en ond cirkel
+      af modgang. En aften fandt hun vej til WeShelter, hvor hun blev mødt med
+      varme, mad og et trygt sted at sove. Med støtte fra rådgivere fik hun
+      hjælp til at finde bolig og arbejde. I dag har hun sit eget hjem og
+      arbejder som frivillig for at hjælpe andre i samme situation. "WeShelter
+      gav mig ikke bare en seng – de gav mig håb."
+    </p>
+  </div>
+</section>
+<style>
+  .historie {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #2768f6;
+    padding-top: 70px;
+    color: white;
+    padding-bottom: 20px;
+  }
+  .text {
+    line-height: 40px;
+    padding-right: 30px;
+  }
+  h2 {
+    font-size: 40px;
+    text-decoration: underline;
+  }
+  h3 {
+    margin-top: -20px;
+    font-size: 25px;
+  }
+  img {
+    width: 600px;
+    padding-left: 40px;
+  }
+  @media (max-width: 768px) {
+    .historie {
+      grid-template-columns: 1fr;
+    }
+    .text {
+      font-size: 16px;
+    }
+    img {
+      width: 400px;
+      align-items: center;
+    }
+  }
+</style>
