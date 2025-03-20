@@ -48,12 +48,10 @@ import Historie from "../components/Historie.astro";
   }
 
   .cards {
-    display: flex;
-    gap: 20px;
-    grid-template: subgrid;
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 5px;
-    padding: 5px;
-    margin: 0 auto;
+    padding: 20px;
+    margin: 5rem 11rem;
   }
 </style>
