@@ -6,14 +6,13 @@ const { billede, altText, beskrivelse, link } = Astro.props;
   <div class="ikon-container">
     <img class="ikon" src={`img/${billede}`} alt={altText} />
   </div>
-  <p>{beskrivelse}</p>
-  <u>{link}</u>
+  <p>{beskrivelse}<u>{link}</u></p>
 </article>
 
 <style>
   article {
     position: relative;
-    padding-top: 3rem;
+    padding-top: 2.5rem;
     text-align: center;
     margin: 5rem;
     width: 500px;
@@ -31,15 +30,18 @@ const { billede, altText, beskrivelse, link } = Astro.props;
     width: 80px;
     height: 80px;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: auto;
-    transform: translateX(-50%);
   }
 
   .ikon {
     max-width: 70%;
   }
 
-  p u {
-    margin: 0 auto;
+  p {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 </style>
